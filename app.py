@@ -7,10 +7,10 @@ import tempfile
 import speech_recognition as sr
 import time
 
-# ---------------- PAGE CONFIG ----------------
+
 st.set_page_config(page_title="Vijay's Translator", layout="centered")
 
-# ---------------- CUSTOM CSS ----------------
+
 st.markdown("""
 <style>
 /* Background */
@@ -56,10 +56,10 @@ h1, h2, h3 {
 </style>
 """, unsafe_allow_html=True)
 
-# ---------------- TITLE ----------------
+
 st.markdown("<h1>🌍 Vijay's AI Translator</h1>", unsafe_allow_html=True)
 
-# ---------------- LANGUAGE MAP ----------------
+
 languages = {
     "Auto Detect": "auto",
     "English": "en",
@@ -74,11 +74,11 @@ languages = {
     "Arabic": "ar"
 }
 
-# ---------------- SESSION ----------------
+
 if "history" not in st.session_state:
     st.session_state.history = []
 
-# ---------------- INPUT CARD ----------------
+
 st.markdown('<div class="card">', unsafe_allow_html=True)
 
 st.subheader("✍️ Enter Text")
@@ -113,7 +113,7 @@ if text:
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# ---------------- TRANSLATE CARD ----------------
+
 st.markdown('<div class="card">', unsafe_allow_html=True)
 
 multi_targets = st.multiselect(
@@ -165,7 +165,7 @@ if st.button("🚀 Translate"):
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# ---------------- HISTORY ----------------
+
 st.markdown('<div class="card">', unsafe_allow_html=True)
 
 st.subheader("📜 History")
@@ -175,7 +175,7 @@ for inp, out in reversed(st.session_state.history[-5:]):
 
 st.markdown('</div>', unsafe_allow_html=True)
 
-# ---------------- DOCUMENT ----------------
+
 st.markdown('<div class="card">', unsafe_allow_html=True)
 
 st.subheader("📄 Document Translation")
